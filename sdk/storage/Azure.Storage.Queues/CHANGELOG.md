@@ -1,7 +1,7 @@
 # Release History
 
-## 12.4.0-preview.1 (Unreleased)
-
+## 12.4.0-preview.4
+- Support for client-side encryption.
 
 ## 12.3.0 (2020-03)
 - Added Exists(), CreateIfNotExists() and DeleteIfNotExists() to QueueClient.

@@ -1,5 +1,8 @@
 # Release History
 
+## 12.5.0-preview.4
+- Support for client-side encryption.
+
 ## 12.4.1 (2020-05)
 - This release contains bug fixes to improve quality.
 
