@@ -47,10 +47,13 @@ namespace Azure.Security.KeyVault.Certificates
             _client = client;
         }
 
+        /// <summary> Initializes a new instance of <see cref="CertificateOperation" /> for mocking. </summary>
+        protected CertificateOperation() {}
+
         /// <summary>
         /// Gets the properties of the pending certificate operation.
         /// </summary>
-        public CertificateOperationProperties Properties { get; private set; }
+        public virtual CertificateOperationProperties Properties { get; private set; }
 
         /// <summary>
         /// Gets a value indicating whether the operation has reached a terminal state.

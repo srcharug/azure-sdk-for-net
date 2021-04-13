@@ -34,7 +34,7 @@ namespace Azure.Storage.Blobs
         /// <param name="blob"> The blob name. </param>
         /// <param name="version"> Specifies the version of the operation to use for this request. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="url"/>, <paramref name="containerName"/>, <paramref name="blob"/>, or <paramref name="version"/> is null. </exception>
-        public BlobRestClient(ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, string url, string containerName, string blob, string version = "2020-06-12")
+        public BlobRestClient(ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, string url, string containerName, string blob, string version = "2020-08-04")
         {
             if (url == null)
             {
@@ -170,7 +170,7 @@ namespace Azure.Storage.Blobs
                         return ResponseWithHeaders.FromValue(value, headers, message.Response);
                     }
                 case 304:
-                    return ResponseWithHeaders.FromValue<Stream, BlobDownloadHeaders>(null, headers, message.Response);
+                    return ResponseWithHeaders.FromValue((Stream)null, headers, message.Response);
                 default:
                     throw await _clientDiagnostics.CreateRequestFailedExceptionAsync(message.Response).ConfigureAwait(false);
             }
@@ -207,7 +207,7 @@ namespace Azure.Storage.Blobs
                         return ResponseWithHeaders.FromValue(value, headers, message.Response);
                     }
                 case 304:
-                    return ResponseWithHeaders.FromValue<Stream, BlobDownloadHeaders>(null, headers, message.Response);
+                    return ResponseWithHeaders.FromValue((Stream)null, headers, message.Response);
                 default:
                     throw _clientDiagnostics.CreateRequestFailedException(message.Response);
             }
